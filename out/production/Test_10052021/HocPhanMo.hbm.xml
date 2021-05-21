@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="POJO.HocPhanMo" table="hocphanmo" schema="htmh">
+        <composite-id mapped="true" class="POJO.HocPhanMoPK">
+            <key-property name="maMh">
+                <column name="MaMH" sql-type="char(10)" length="10"/>
+            </key-property>
+            <key-property name="tenHk">
+                <column name="TenHK" sql-type="char(10)" length="10"/>
+            </key-property>
+            <key-property name="namHoc">
+                <column name="NamHoc" sql-type="int"/>
+            </key-property>
+        </composite-id>
+        <property name="phong">
+            <column name="Phong" sql-type="char(20)" length="20" not-null="true"/>
+        </property>
+        <property name="thu">
+            <column name="Thu" sql-type="int" not-null="true"/>
+        </property>
+        <property name="ca">
+            <column name="Ca" sql-type="int" not-null="true"/>
+        </property>
+        <property name="maxSlot">
+            <column name="MaxSlot" sql-type="int" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

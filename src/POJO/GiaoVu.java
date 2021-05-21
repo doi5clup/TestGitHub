@@ -1,0 +1,91 @@
+package POJO;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.sql.Date;
+import java.util.Objects;
+
+@Entity
+public class GiaoVu {
+    private String maGv;
+    private String tenGv;
+    private String gioiTinh;
+    private Date ngSinh;
+    private String diaChi;
+    private String pass;
+
+    @Id
+    @Column(name = "MaGV", nullable = false, length = 10)
+    public String getMaGv() {
+        return maGv;
+    }
+
+    public void setMaGv(String maGv) {
+        this.maGv = maGv;
+    }
+
+    @Basic
+    @Column(name = "TenGV", nullable = true, length = 30)
+    public String getTenGv() {
+        return tenGv;
+    }
+
+    public void setTenGv(String tenGv) {
+        this.tenGv = tenGv;
+    }
+
+    @Basic
+    @Column(name = "GioiTinh", nullable = true, length = 10)
+    public String getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh;
+    }
+
+    @Basic
+    @Column(name = "NgSinh", nullable = true)
+    public Date getNgSinh() {
+        return ngSinh;
+    }
+
+    public void setNgSinh(Date ngSinh) {
+        this.ngSinh = ngSinh;
+    }
+
+    @Basic
+    @Column(name = "DiaChi", nullable = true, length = 50)
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
+    @Basic
+    @Column(name = "Pass", nullable = true, length = 30)
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GiaoVu giaoVu = (GiaoVu) o;
+        return Objects.equals(maGv, giaoVu.maGv) && Objects.equals(tenGv, giaoVu.tenGv) && Objects.equals(gioiTinh, giaoVu.gioiTinh) && Objects.equals(ngSinh, giaoVu.ngSinh) && Objects.equals(diaChi, giaoVu.diaChi) && Objects.equals(pass, giaoVu.pass);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(maGv, tenGv, gioiTinh, ngSinh, diaChi, pass);
+    }
+}
